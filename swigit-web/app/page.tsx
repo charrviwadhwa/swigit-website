@@ -25,6 +25,14 @@ export default function SwigitOptimizedSite() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    event.preventDefault();
+    const target = document.querySelector(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   // Complete Command List from CLI Help
   const cheatSheet = [
     { cmd: "swigit [message]", desc: "Stage, AI commit (or use provided message), audit, and push." },
@@ -43,7 +51,7 @@ export default function SwigitOptimizedSite() {
   ];
 
   return (
-    <div className={`relative min-h-screen bg-[#050505] text-white overflow-x-hidden ${inter.className}`}>
+    <div className={`relative min-h-screen bg-[#050505] text-white overflow-x-hidden scroll-smooth${inter.className}`}>
       
       {/* --- LAYER 1: HARDWARE-ACCELERATED AURORA GRADIENTS --- */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] md:w-[80%] h-[900px] z-0 pointer-events-none flex justify-center">
@@ -79,9 +87,33 @@ export default function SwigitOptimizedSite() {
             <Terminal className="w-5 h-5 text-emerald-400" /> swigit
           </div>
           <div className="hidden md:flex items-center gap-10 text-xs font-medium text-gray-400 tracking-wider uppercase">
-            <a href="#comparison" className="hover:text-white transition">The Problem</a>
-            <a href="#features" className="hover:text-white transition">Features</a>
-            <a href="#cheatsheet" className="hover:text-white transition">Commands</a>
+            <motion.a
+              href="#comparison"
+              onClick={(event) => handleNavClick(event, "#comparison")}
+              className="hover:text-white transition"
+              whileTap={{ scale: 0.96 }}
+              whileHover={{ y: -1 }}
+            >
+              The Problem
+            </motion.a>
+            <motion.a
+              href="#features"
+              onClick={(event) => handleNavClick(event, "#features")}
+              className="hover:text-white transition"
+              whileTap={{ scale: 0.96 }}
+              whileHover={{ y: -1 }}
+            >
+              Features
+            </motion.a>
+            <motion.a
+              href="#cheatsheet"
+              onClick={(event) => handleNavClick(event, "#cheatsheet")}
+              className="hover:text-white transition"
+              whileTap={{ scale: 0.96 }}
+              whileHover={{ y: -1 }}
+            >
+              Commands
+            </motion.a>
             <a href="https://www.npmjs.com/package/@charviwadhwa06/swigit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition text-blue-400">
               <Package className="w-3.5 h-3.5" /> NPM
             </a>
