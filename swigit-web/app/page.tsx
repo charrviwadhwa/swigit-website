@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { motion } from 'framer-motion';
-import { Terminal, ShieldCheck, GitPullRequest, Settings, Copy, Check, Command, Sparkles, X, ArrowRight, Package } from 'lucide-react';
+import { Terminal, ShieldCheck, GitPullRequest, Settings, Copy, Check, Command, Sparkles, X, ArrowRight, Package, Star } from 'lucide-react';
 
 // Initialize Fonts
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
@@ -119,8 +119,8 @@ export default function SwigitOptimizedSite() {
             </a>
           </div>
           <a href="https://github.com/charrviwadhwa/swigit" target="_blank" rel="noopener noreferrer">
-            <button className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-md px-6 py-2.5 rounded-full text-xs font-medium hover:bg-white/[0.08] hover:border-white/[0.2] transition-all uppercase tracking-wide flex items-center gap-2 group">
-              GitHub <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+            <button className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-md px-6 py-2.5 rounded-full text-[10px] font-bold text-gray-300 hover:bg-white/[0.08] hover:border-white/[0.2] hover:text-yellow-400 transition-all uppercase tracking-[0.15em] flex items-center gap-2 group">
+              Star on GitHub <Star className="w-3 h-3 group-hover:scale-110 transition-transform" />
             </button>
           </a>
         </nav>
