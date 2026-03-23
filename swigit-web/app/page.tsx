@@ -51,7 +51,7 @@ export default function SwigitOptimizedSite() {
   ];
 
   return (
-    <div className={`relative min-h-screen bg-[#050505] text-white overflow-x-hidden scroll-smooth${inter.className}`}>
+    <div className={`relative min-h-screen bg-[#050505] text-white overflow-x-hidden scroll-smooth ${inter.className}`}>
       
       {/* --- LAYER 1: HARDWARE-ACCELERATED AURORA GRADIENTS --- */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] md:w-[80%] h-[900px] z-0 pointer-events-none flex justify-center">
@@ -277,8 +277,20 @@ export default function SwigitOptimizedSite() {
         </section>
 
         {/* --- FOOTER --- */}
-        <footer className="border-t border-white/[0.05] bg-[#020202] py-12 relative z-20">
-          <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* --- FOOTER --- */}
+        <footer className="border-t border-white/[0.05] bg-[#020202] pt-[12vw] pb-12 relative z-20 overflow-hidden">
+          {/* Huge Background Watermark */}
+          <div 
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[15%] text-[24vw] font-black text-white/[0.05] uppercase tracking-tighter pointer-events-none select-none z-0 leading-none whitespace-nowrap"
+            style={{ 
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 5%, black 40%)', 
+              maskImage: 'linear-gradient(to bottom, transparent 5%, black 40%)' 
+            }}
+          >
+            SWIGIT
+          </div>
+
+          <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
             <div className="text-gray-500 text-sm font-light">
               Built by <span className="text-gray-300 font-medium">Charvi Wadhwa</span>
             </div>
